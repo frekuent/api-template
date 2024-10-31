@@ -1,0 +1,39 @@
+default_stages: [ pre-commit, pre-push ]
+
+default_language_version:
+  python: python3.12
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: debug-statements
+      - id: check-case-conflict
+
+      - id: check-json
+        stages: [ pre-push ]
+      - id: check-toml
+        stages: [ pre-push ]
+      - id: check-xml
+        stages: [ pre-push ]
+      - id: check-yaml
+        stages: [ pre-push ]
+      - id: check-builtin-literals
+        stages: [ pre-push ]
+      - id: detect-private-key
+        stages: [ pre-push ]
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.7.1
+    hooks:
+      - id: ruff
+        args: [ --fix ]
+        files: \.py$
+
+  - repo: https://github.com/psf/black
+    rev: 24.10.0
+    hooks:
+      - id: black
+        files: \.py$

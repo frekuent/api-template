@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-template-production
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: api-template
+      environment: production
+  template:
+    metadata:
+      labels:
+        app: api-template
+        environment: production
+    spec:
+      containers:
+      - name: api-template
+        image: your-production-docker-image
+        ports:
+        - containerPort: 8000
+        envFrom:
+          - configMapRef:
+              name: api-template-production-config
+          - secretRef:
+              name: api-template-production-secret

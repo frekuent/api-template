@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-template-development
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: api-template
+      environment: development
+  template:
+    metadata:
+      labels:
+        app: api-template
+        environment: development
+    spec:
+      containers:
+      - name: api-template
+        image: your-development-docker-image
+        ports:
+        - containerPort: 8000
+        envFrom:
+          - configMapRef:
+              name: api-template-development-config
+          - secretRef:
+              name: api-template-development-secret

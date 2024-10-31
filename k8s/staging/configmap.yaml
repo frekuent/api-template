@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: api-template-staging-config
+data:
+  ENV: "staging"
+  DJANGO_SETTINGS_MODULE: "core.settings.staging"
+  DATABASE_URL: "your_staging_database_url"

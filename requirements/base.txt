@@ -1,0 +1,8 @@
+Django==5.0.9
+fastapi==0.115.4
+mssql-django==1.5
+pydantic==2.9.2
+pyodbc==5.2.0
+python-dotenv==1.0.1
+uvicorn==0.32.0
+requests==2.32.3

@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: api-template-development-config
+data:
+  ENV: "development"
+  DJANGO_SETTINGS_MODULE: "core.settings.development"
+  DATABASE_URL: "your_development_database_url"

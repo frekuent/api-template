@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-template-staging
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: api-template
+      environment: staging
+  template:
+    metadata:
+      labels:
+        app: api-template
+        environment: staging
+    spec:
+      containers:
+      - name: api-template
+        image: your-staging-docker-image
+        ports:
+        - containerPort: 8000
+        envFrom:
+          - configMapRef:
+              name: api-template-staging-config
+          - secretRef:
+              name: api-template-staging-secret

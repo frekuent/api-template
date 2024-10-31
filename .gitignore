@@ -1,0 +1,66 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C Extensions
+*.so
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+db.sqlite3
+instance/
+.media
+.static
+
+# Django migrations
+**/migrations/local/
+
+# Secrets
+.env.*
+!envs/.env.example
+secret.yaml
+
+# Node modules (if you are using any frontend tools)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# VSCode specific files
+.vscode/
+
+# PyCharm specific files
+.idea/
+*.iml
+
+# macOS specific files
+.DS_Store
+
+# pip and packaging files
+*.lock
+Pipfile
+Pipfile.lock
+
+# Linting and coverage files
+.pytest_cache/
+.coverage
+.cache
+
+# Virtualenv in .venv/ and .env/
+.venv/
+.env/
+
+# Black formatting
+black.log
+
+# Others
