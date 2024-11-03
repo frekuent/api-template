@@ -5,11 +5,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Common applications and middleware
-INSTALLED_APPS = [
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-]
+INSTALLED_APPS = ["django.contrib.auth", "django.contrib.contenttypes", "django.contrib.sessions", "app.db.models"]
 
 # Secret key, overridden by environment-specific settings
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "default-secret-key")
