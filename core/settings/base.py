@@ -5,7 +5,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Common applications and middleware
-INSTALLED_APPS = ["django.contrib.auth", "django.contrib.contenttypes", "django.contrib.sessions", "app.db.models"]
+INSTALLED_APPS = ["django.contrib.auth", "django.contrib.contenttypes", "django.contrib.sessions", "app.db"]
 
 # Secret key, overridden by environment-specific settings
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "default-secret-key")
@@ -16,6 +16,8 @@ MIDDLEWARE = [
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
 ]
+
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Common configurations for Django
 LANGUAGE_CODE = "en-us"
